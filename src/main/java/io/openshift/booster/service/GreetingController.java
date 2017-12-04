@@ -35,4 +35,10 @@ public class GreetingController {
         String message = String.format(properties.getMessage(), name);
         return new Greeting(message);
     }
+    
+    @RequestMapping("/api/goodbye")
+    public String goodbye(@RequestParam(value="name", defaultValue="World") String name) {
+        return "Goodbye " + name + " " +  new java.util.Date();
+    }
+
 }
